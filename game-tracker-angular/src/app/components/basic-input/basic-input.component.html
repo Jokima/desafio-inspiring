@@ -1,0 +1,10 @@
+<div class="basic-input-wrapper">
+  <mat-icon>{{ icon }}</mat-icon>
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    [class]="class"
+    [(ngModel)]="value"
+    (keyup)="keyUpEvent.emit(value)"
+  />
+</div>

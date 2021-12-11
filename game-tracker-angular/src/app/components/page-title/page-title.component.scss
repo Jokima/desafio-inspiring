@@ -1,0 +1,20 @@
+.title {
+  display: flex;
+  align-items: center;
+  padding: 50px 10% 20px 10%;
+
+  p {
+    color: var(--app-white);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    padding: 20px 0px 20px 0px;
+    justify-content: center;
+  }
+}

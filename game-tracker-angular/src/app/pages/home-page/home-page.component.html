@@ -1,0 +1,57 @@
+<div id="main-content">
+  <app-page-title [title]="'Ofertas'"></app-page-title>
+  <div class="input-row">
+    <app-basic-input
+      [icon]="'search'"
+      [placeholder]="'Buscar'"
+      [class]="'basic-input'"
+      [value]="search"
+      (keyUpEvent)="search = $event; handleFilter()"
+      class="search"
+    ></app-basic-input>
+    <div class="sort-by">
+      <p class="sort-by-label">
+        Ordenar por:
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-select [(ngModel)]="sort">
+          <mat-option
+            (click)="handleFilter()"
+            *ngFor="let sortOpt of sortOptions"
+            [value]="sortOpt.value"
+            >{{ sortOpt.label }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="card-list">
+    <app-offer-card
+      *ngFor="let offer of filteredOffers; let i = index"
+      [offer]="offer"
+    ></app-offer-card>
+  </div>
+  <div class="footer">
+    <div class="footer-logo">
+      <img src="../../../assets/logo-icone.svg" />
+    </div>
+    <div class="footer-lorem-ipsum">
+      <p>
+        © 2021, Game Tracker Inc. Todos os direitos reservados. Nulla facilisi.
+        Etiam sagittis congue tempor. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas. Suspendisse eu
+        velit et ante luctus egestas. Aenean sed nisi tellus. Duis non ornare
+        libero. Quisque suscipit maximus nisi, in gravida felis. Cras ornare
+        mauris ac nisi congue, ut condimentum sem tincidunt. Phasellus semper
+        tellus malesuada turpis gravida cursus. Duis nec eleifend nunc, vitae
+        finibus elit. Aliquam eget diam vitae purus suscipit viverra.
+      </p>
+    </div>
+    <div class="footer-links">
+      <button mat-button>Termos de Serviço</button>
+      <button mat-button>Políticas de Privacidade</button>
+      <button mat-button>Trabalhe Conosco</button>
+      <button mat-button>Contato</button>
+    </div>
+  </div>
+</div>
