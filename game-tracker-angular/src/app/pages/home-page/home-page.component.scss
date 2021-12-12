@@ -1,0 +1,80 @@
+#main-content {
+  max-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
+  overflow: auto;
+  width: 100%;
+  background: var(--app-gradient);
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+
+  .search {
+    margin-right: 7px;
+    width: 25%;
+  }
+
+  .sort-by {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    &-label {
+      color: var(--app-white);
+      margin-right: 15px;
+      text-shadow: 1px 1px 5px black;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .input-row {
+    padding: 0px 10px;
+    align-items: flex-end;
+
+    .search {
+      width: auto;
+    }
+
+    .sort-by {
+      display: block;
+    }
+  }
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 20px;
+  padding: 20px 10%;
+  min-height: calc(100vh - 50px - 260px);
+}
+
+@media only screen and (max-width: 768px) {
+  .card-list {
+    padding: 20px 10px;
+  }
+}
+
+.footer {
+  background: var(--app-blue);
+  padding: 50px 10%;
+  color: var(--app-white);
+
+  &-logo {
+    text-align: center;
+  }
+
+  &-lorem-ipsum {
+    margin: 15px 0px;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 20px;
+  }
+}

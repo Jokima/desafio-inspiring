@@ -1,0 +1,73 @@
+.offer-card {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--app-blue);
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 250px;
+
+  img {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &-details {
+    height: 35%;
+    padding: 0px 10px;
+    color: var(--app-white);
+    display: flex;
+    align-items: center;
+
+    &-body {
+      width: 100%;
+    }
+
+    .title-row {
+      p {
+        font-size: 17px;
+        font-weight: 300;
+      }
+
+      margin-bottom: 7px;
+    }
+
+    .details-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .detail-tag {
+      padding: 10px;
+      background: var(--app-pink);
+      border-radius: 8px;
+      width: 82px;
+    }
+
+    .values {
+      display: flex;
+      align-items: center;
+      text-align: right;
+
+      .normal-price {
+        font-size: 12px;
+        line-height: 14px;
+        text-decoration: line-through;
+        font-weight: bold;
+      }
+
+      .sale-price {
+        font-size: 18px;
+      }
+
+      .discount-tag {
+        padding: 10px;
+        border-radius: 8px;
+        background: var(--app-green);
+        margin-left: 12px;
+      }
+    }
+  }
+}

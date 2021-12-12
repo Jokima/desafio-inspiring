@@ -1,0 +1,30 @@
+<div class="offer-card">
+  <img [src]="offer.thumb" />
+  <div class="offer-card-details">
+    <div class="offer-card-details-body">
+      <div class="title-row">
+        <p>{{ offer.title }}</p>
+      </div>
+      <div class="details-row">
+        <div>
+          <div class="detail-tag">
+            <p>Detalhes</p>
+          </div>
+        </div>
+        <div class="values">
+          <div>
+            <p class="normal-price">$ {{ offer.normalPrice }}</p>
+            <p class="sale-price">$ {{ offer.salePrice }}</p>
+          </div>
+          <div class="discount-tag">
+            <div>
+              <p>
+                {{ formatarPorcentagemDesconto(offer.discount!) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

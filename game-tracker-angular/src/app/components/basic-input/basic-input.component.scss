@@ -1,0 +1,22 @@
+.basic-input-wrapper {
+  border-radius: 8px;
+  background: var(--app-blue);
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+  mat-icon {
+    color: var(--app-gray);
+  }
+
+  .basic-input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    color: var(--app-gray);
+    min-width: 0px !important;
+    width: 100%;
+  }
+}
