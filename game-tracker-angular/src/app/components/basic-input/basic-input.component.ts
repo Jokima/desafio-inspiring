@@ -7,11 +7,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class BasicInputComponent implements OnInit {
   @Output() keyUpEvent = new EventEmitter<string>();
+  @Output() sendEvent = new EventEmitter<boolean>();
 
   @Input() icon: string = '';
   @Input() placeholder: string = '';
   @Input() class: string = '';
   @Input() value: string = '';
+  @Input() showSendButton: boolean = false;
+  @Input() sendButtonIcon = '';
 
   constructor() {}
 

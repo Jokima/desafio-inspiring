@@ -7,4 +7,7 @@
     [(ngModel)]="value"
     (keyup)="keyUpEvent.emit(value)"
   />
+  <button mat-button class="send-button" *ngIf="showSendButton" (click)="sendEvent.emit(true)">
+    <mat-icon>{{ sendButtonIcon }}</mat-icon>
+  </button>
 </div>
