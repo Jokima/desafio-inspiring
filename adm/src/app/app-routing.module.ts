@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CadastroOfertasComponent } from './pages/cadastro-ofertas/cadastro-ofertas.component';
-import { NossasOfertasComponent } from './pages/nossas-ofertas/nossas-ofertas.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { CadastroOfertasComponent } from "./pages/cadastro-ofertas/cadastro-ofertas.component";
+import { NossasOfertasComponent } from "./pages/nossas-ofertas/nossas-ofertas.component";
 
 const routes: Routes = [
-  { path: 'cadastroofertas', component: CadastroOfertasComponent },
-  { path: 'nossasofertas', component: NossasOfertasComponent }
+  // REDIRECIONA PARA A ROTA "nossasofertas" AO ACESSAR A BASEURL
+  { path: "", pathMatch: "full", redirectTo: "nossasofertas" },
+  { path: "nossasofertas", component: NossasOfertasComponent },
+  { path: "cadastroofertas", component: CadastroOfertasComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

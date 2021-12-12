@@ -2,7 +2,16 @@ section {
  
     .container {
         max-width: 1200px;
-        width: 100%;        
+        width: 100%;
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+
+            .botao-adicionar {
+                height: 36px;
+            }
+        }
         
         table {
             width: 100%;
