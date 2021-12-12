@@ -19,4 +19,10 @@
     min-width: 0px !important;
     width: 100%;
   }
+
+  .send-button {
+    background-color: var(--app-green);
+    padding: 0px 8px;
+    min-width: 45px;
+  }
 }

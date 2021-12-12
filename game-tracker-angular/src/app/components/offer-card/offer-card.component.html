@@ -1,9 +1,13 @@
 <div class="offer-card">
-  <img [src]="offer.thumb" />
+  <img
+    [src]="makeThumbFromSteam(offer.steamAppID)"
+    onerror="this.src='../../../assets/sem-imagem.jpg'"
+    [alt]="offer.title"
+  />
   <div class="offer-card-details">
     <div class="offer-card-details-body">
       <div class="title-row">
-        <p>{{ offer.title }}</p>
+        <p>{{ makeSubstringFromTitle(offer.title) }}</p>
       </div>
       <div class="details-row">
         <div>
@@ -19,7 +23,7 @@
           <div class="discount-tag">
             <div>
               <p>
-                {{ formatarPorcentagemDesconto(offer.discount!) }}
+                {{ formatDiscountPercentage(offer.discount!) }}
               </p>
             </div>
           </div>

@@ -6,7 +6,10 @@
       [placeholder]="'Buscar'"
       [class]="'basic-input'"
       [value]="search"
-      (keyUpEvent)="search = $event; handleFilter()"
+      [showSendButton]="true"
+      [sendButtonIcon]="'send'"
+      (keyUpEvent)="search = $event"
+      (sendEvent)="handleFilter()"
       class="search"
     ></app-basic-input>
     <div class="sort-by">
@@ -30,6 +33,11 @@
       *ngFor="let offer of filteredOffers; let i = index"
       [offer]="offer"
     ></app-offer-card>
+  </div>
+  <div class="show-more">
+    <button mat-button (click)="handleShowMore()">
+      <p>Carregar mais</p>
+    </button>
   </div>
   <div class="footer">
     <div class="footer-logo">
