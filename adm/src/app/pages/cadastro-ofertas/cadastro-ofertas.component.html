@@ -6,7 +6,7 @@
             <div class="campos">
                 <mat-form-field appearance="outline">
                     <mat-label>ID</mat-label>
-                    <input matInput placeholder="ID do jogo">
+                    <input matInput placeholder="ID do jogo" [(ngModel)]="oferta.id">
                 </mat-form-field>
             </div>
 
@@ -14,31 +14,29 @@
             <div class="campos">
                 <mat-form-field appearance="outline">
                     <mat-label>Título</mat-label>
-                    <input matInput placeholder="Título do jogo">
+                    <input matInput placeholder="Título do jogo" [(ngModel)]="oferta.titulo">
                 </mat-form-field>
             </div>
 
             <div class="campos">
                 <mat-form-field appearance="outline">
                     <mat-label>Preço</mat-label>
-                    <input matInput placeholder="Título do jogo">
+                    <input matInput placeholder="Preço do jogo" [(ngModel)]="oferta.preco">
                 </mat-form-field>
             </div>
 
             <div class="campos">
                 <mat-form-field appearance="outline">
                     <mat-label>Preço com desconto</mat-label>
-                    <input matInput placeholder="Peeço com deaconto">
+                    <input matInput placeholder="Preço com desconto" [(ngModel)]="oferta.precoDesconto">
                 </mat-form-field>
             </div>
 
             <div class="campos">
-                <mat-form-field appearance="outline" *ngFor="let loja of lojas">
+                <mat-form-field appearance="outline">
                     <mat-label>Loja</mat-label>
-                    <mat-select>
-                        <mat-option value="5">{{loja}}</mat-option>
-                        <mat-option value="2">{{loja}}</mat-option>
-                        <mat-option value="7">{{loja}}</mat-option>
+                    <mat-select [(ngModel)]="oferta.idLoja">
+                        <mat-option [value]="loja.id" *ngFor="let loja of lojas">{{loja.nome}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -47,13 +45,13 @@
             <div class="campos">
                 <mat-form-field appearance="outline">
                     <mat-label>Descrição</mat-label>
-                    <input matInput placeholder="">
+                    <input matInput placeholder="Descrição da oferta" [(ngModel)]="oferta.descricao">
                 </mat-form-field>
             </div>
 
         </div>
         <div class="campos">
-            <button mat-raised-button color="primary">Salvar</button>
+            <button mat-raised-button color="primary" (click)="validarInputs(oferta)">Salvar</button>
         </div>
     </div>
 </section>

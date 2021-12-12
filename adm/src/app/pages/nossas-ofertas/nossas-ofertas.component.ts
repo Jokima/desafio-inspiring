@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { IOferta } from 'src/app/models/oferta.model';
+import { OfertasService } from 'src/app/services/ofertas.service';
 
 @Component({
   selector: 'app-nossas-ofertas',
@@ -8,13 +11,23 @@ import { Component, OnInit } from '@angular/core';
 
 export class NossasOfertasComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'titulo', 'preco', 'precoDesconto'];
+  @Output() tableRowClick;
+
+  displayedColumns: string[] = ['id', 'titulo', 'preco', 'precoDesconto', 'idLoja', 'descricao'];
   dataSource;
 
-  constructor() { }
+  constructor(public ofertasService: OfertasService, private router: Router) { }
 
   ngOnInit(): void {
-    this.dataSource = JSON.parse(window.localStorage.getItem("ofertas-game-tracker"));
+    this.ofertasService.oferta = this.ofertasService.defaultOferta;
+    this.ofertasService.editMode = false;
+    this.dataSource = this.ofertasService.ofertas;
+  }
+
+  handleRowClick(row: IOferta): void {
+    this.ofertasService.oferta = row;
+    this.ofertasService.editMode = true;
+    this.router.navigateByUrl('/cadastroofertas');
   }
 
 }

@@ -1,15 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 section {
-    display: flex;
-    justify-content: center;   
-    padding: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 
-    h2 {
-        margin-bottom: 0;
-        color: #C70160;
-    }
+  h2 {
+    margin-bottom: 0;
+    color: #c70160;
+  }
+}
+
+.snackbar-negativo {
+  border-radius: 8px !important;
+  color: #fff;
+
+  button {
+    color: #fff;
+  }
+
+  background: #c70160;
+}
+
+.snackbar-positivo {
+  border-radius: 8px !important;
+  color: #fff;
+
+  button {
+    color: #fff;
+  }
+
+  background: #16857b;
 }
